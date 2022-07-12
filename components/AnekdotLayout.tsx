@@ -1,10 +1,11 @@
 interface Props {
   children: React.ReactNode;
 }
+import styles from "../styles/anekdot.module.scss";
 export const AnekdotLayout = ({ children }: Props) => {
   return (
     <>
-      <h1>{children}</h1>
+      <div>{children}</div>
     </>
   );
 };
