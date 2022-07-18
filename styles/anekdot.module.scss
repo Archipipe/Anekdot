@@ -54,11 +54,13 @@ $MColor: rgba(248, 201, 134, 0.856);
       font-size: 1.2em;
       color: rgb(0, 0, 0);
 
-      line-height: 20px;
+      line-height: 125%;
 
       padding: 0% 5% 5%;
 
-      p {
+      br {
+        content: "";
+        display: block;
         margin-bottom: 1.8%;
       }
     }

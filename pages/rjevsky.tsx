@@ -1,25 +1,35 @@
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { AnekdotLayout } from "../components/AnekdotLayout";
+import { AnekdotContext, AnekdotType } from "../components/context";
+
+import R1 from "../public/R1.json";
 
 export default function Rjevsky() {
+  let ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (null !== ref.current) {
+      ref.current.innerHTML = R1[0];
+    }
+  }, []);
+  const R = R1[0];
+
+  const [radioState, setRadioState] = useState<AnekdotType>(
+    AnekdotType.AnekdotType1
+  );
+
+  useEffect(() => {
+    console.log(radioState, "==");
+  });
+
   return (
-    <AnekdotLayout>
-      <p>
-        Однажды полковник встречает в ресторане поручика Ржевского. Полковник:
-      </p>
-      <p>
-        – Я вот смотрю, поручик, и вижу, частенько вы сюда захаживаете. А у меня
-        денег не хватает.
-      </p>
-      <p>– А куда же вы свою большую зарплату деваете?</p>
-      <p>– Да, вот жене всю отдаю. А потом она мне выдает на мелкие расходы.</p>
-      <p>
-        – Я вас научу, полковник. Придете домой, обнимите жену, поцелуйте ее в
-        щечку – она вам сразу денежек даст.
-      </p>
-      <p>
-        Полковник приходит домой, обнял жену, поцеловал, а она и спрашивает:
-      </p>
-      <p>– Ну что, поручик, опять деньги кончились?..</p>
-    </AnekdotLayout>
+    <AnekdotContext.Provider
+      value={{ Anekdot: radioState, setAnekdot: setRadioState }}
+    >
+      <AnekdotLayout>
+        <div ref={ref}></div>
+      </AnekdotLayout>
+    </AnekdotContext.Provider>
   );
 }
