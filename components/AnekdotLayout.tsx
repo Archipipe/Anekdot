@@ -1,6 +1,7 @@
 interface Props {
   children: React.ReactNode;
 }
+import back from "../public/back.png";
 
 import arrRight from "../public/arrRight.png";
 import arrLeft from "../public/arrLeft.png";
@@ -9,34 +10,56 @@ import pizzaOn from "../public/pizzaOn.png";
 import pizzaOff from "../public/pizzaOff.png";
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/anekdot.module.scss";
-import React, { useEffect, useState, useContext } from "react";
-import { AnekdotContext, AnekdotType } from "./context";
+import React, { useEffect, useState, useContext, useMemo } from "react";
+import { AnekdotContext, AnekdotType, ArrorType } from "./context";
 
 export const AnekdotLayout = ({ children }: Props) => {
   const [radioState, setRadioState] = useState<AnekdotType>(
     AnekdotType.AnekdotType1
   );
-  const { Anekdot, setAnekdot } = useContext(AnekdotContext);
+  const { setAnekdot, arrorAction } = useContext(AnekdotContext);
 
   useEffect(() => {
     setAnekdot(radioState);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [radioState]);
+
+  useEffect;
   const isRadioSelected = (value: AnekdotType): boolean => value === radioState;
 
   const handleSelectRadio = (value: AnekdotType): void => setRadioState(value);
 
   return (
     <>
+      <div className={styles.back}>
+        <Link href="/">
+          <a>
+            <Image src={back} alt=""></Image>
+          </a>
+        </Link>
+      </div>
       <div className={styles.anekdot}>
         <div>
           <nav>
             <span>
-              <Image src={arrLeft} alt="" />
+              <Image
+                onClick={() => {
+                  arrorAction(ArrorType.ArrorLeft);
+                }}
+                src={arrLeft}
+                alt=""
+              />
             </span>
             <span>
-              <Image src={arrRight} alt="" />
+              <Image
+                onClick={() => {
+                  arrorAction(ArrorType.ArrorRight);
+                }}
+                src={arrRight}
+                alt=""
+              />
             </span>
           </nav>
           <div>{children}</div>

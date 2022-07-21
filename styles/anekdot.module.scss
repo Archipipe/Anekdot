@@ -1,29 +1,49 @@
 $ATypesMargin: 20%;
 
 $MBHeight: 60%;
-$MaxMBHeight: 700px;
+$MaxMBHeight: 550px;
 $MBWidth: 65%;
 $MaxMBWidth: 900px;
 
 $MColor: rgba(248, 201, 134, 0.856);
 
+.back {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+
+  width: 8%;
+  max-width: 100px;
+
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 0px 10px rgba(115, 86, 44, 0.856));
+  }
+}
+
 .anekdot {
   width: 100%;
   height: 100vh;
 
-  display: grid;
-  place-items: center;
-
   & > div {
     max-width: $MaxMBWidth;
     width: $MBWidth;
-    max-height: $MaxMBHeight;
-    height: $MBHeight;
+    min-height: $MBHeight;
 
     background-color: $MColor;
     border-radius: 20px;
 
-    position: relative;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    padding-bottom: 50px;
+
+    @media screen and (max-width: 1500px) {
+      top: ($ATypesMargin + 5%);
+    }
 
     & > nav {
       width: 100%;
@@ -56,7 +76,7 @@ $MColor: rgba(248, 201, 134, 0.856);
 
       line-height: 125%;
 
-      padding: 0% 5% 5%;
+      padding: 0% 5%;
 
       br {
         content: "";
@@ -147,8 +167,9 @@ $MColor: rgba(248, 201, 134, 0.856);
         width: 100%;
 
         height: $ATypesMargin;
+        max-height: 120px;
 
-        top: -($ATypesMargin + 5%);
+        top: max(-25%, -150px);
         right: 0;
       }
     }
