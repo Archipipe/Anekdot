@@ -63,99 +63,91 @@ export const AnekdotLayout = ({ children }: Props) => {
             </span>
           </nav>
           <div>{children}</div>
-          <div>
-            <span>
-              <input
-                type="radio"
-                id="AnekdotType1"
-                name="contact"
-                value="AnekdotType1"
-                checked={isRadioSelected(AnekdotType.AnekdotType1)}
-                readOnly={true}
+        </div>
+        <div>
+          <span>
+            <input
+              type="radio"
+              id="AnekdotType1"
+              name="contact"
+              value="AnekdotType1"
+              checked={isRadioSelected(AnekdotType.AnekdotType1)}
+              readOnly={true}
+            />
+            <label htmlFor="AnekdotType1">На трезвую голову</label>
+            <div>
+              <Image
+                src={
+                  isRadioSelected(AnekdotType.AnekdotType1) ? pizzaOn : pizzaOff
+                }
+                alt=""
+                onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType1)}
               />
-              <label htmlFor="AnekdotType1">На трезвую голову</label>
-              <div>
-                <Image
-                  src={
-                    isRadioSelected(AnekdotType.AnekdotType1)
-                      ? pizzaOn
-                      : pizzaOff
-                  }
-                  alt=""
-                  onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType1)}
-                />
-              </div>
-            </span>
+            </div>
+          </span>
 
-            <span>
-              <input
-                type="radio"
-                id="AnekdotType2"
-                name="contact"
-                value="AnekdotType2"
-                checked={isRadioSelected(AnekdotType.AnekdotType2)}
-                readOnly={true}
+          <span>
+            <input
+              type="radio"
+              id="AnekdotType2"
+              name="contact"
+              value="AnekdotType2"
+              checked={isRadioSelected(AnekdotType.AnekdotType2)}
+              readOnly={true}
+            />
+            <label htmlFor="AnekdotType2">Минус бутылочка</label>
+            <div>
+              <Image
+                src={
+                  isRadioSelected(AnekdotType.AnekdotType2) ? pizzaOn : pizzaOff
+                }
+                alt=""
+                onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType2)}
               />
-              <label htmlFor="AnekdotType2">Минус бутылочка</label>
-              <div>
-                <Image
-                  src={
-                    isRadioSelected(AnekdotType.AnekdotType2)
-                      ? pizzaOn
-                      : pizzaOff
-                  }
-                  alt=""
-                  onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType2)}
-                />
-              </div>
-            </span>
+            </div>
+          </span>
 
-            <span>
-              <input
-                type="radio"
-                id="AnekdotType3"
-                name="contact"
-                value="AnekdotType3"
-                checked={isRadioSelected(AnekdotType.AnekdotType3)}
-                readOnly={true}
+          <span>
+            <input
+              type="radio"
+              id="AnekdotType3"
+              name="contact"
+              value="AnekdotType3"
+              checked={isRadioSelected(AnekdotType.AnekdotType3)}
+              readOnly={true}
+            />
+            <label htmlFor="AnekdotType3">Состояние вертолётиков</label>
+            <div>
+              <Image
+                src={
+                  isRadioSelected(AnekdotType.AnekdotType3) ? pizzaOn : pizzaOff
+                }
+                alt=""
+                onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType3)}
               />
-              <label htmlFor="AnekdotType3">Состояние вертолётиков</label>
-              <div>
-                <Image
-                  src={
-                    isRadioSelected(AnekdotType.AnekdotType3)
-                      ? pizzaOn
-                      : pizzaOff
-                  }
-                  alt=""
-                  onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType3)}
-                />
-              </div>
-            </span>
+            </div>
+          </span>
 
-            <span>
-              <input
-                type="radio"
-                id="AnekdotType4"
-                name="contact"
-                value="AnekdotType4"
-                checked={isRadioSelected(AnekdotType.AnekdotType4)}
-                readOnly={true}
+          <span>
+            <input
+              type="radio"
+              id="AnekdotType4"
+              name="contact"
+              value="AnekdotType4"
+              checked={isRadioSelected(AnekdotType.AnekdotType4)}
+              readOnly={true}
+            />
+            <label htmlFor="AnekdotType4">Еба шатает нахуй</label>
+            <div>
+              <Image
+                src={
+                  isRadioSelected(AnekdotType.AnekdotType4) ? pizzaOn : pizzaOff
+                }
+                alt=""
+                onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType4)}
               />
-              <label htmlFor="AnekdotType4">Еба шатает нахуй</label>
-              <div>
-                <Image
-                  src={
-                    isRadioSelected(AnekdotType.AnekdotType4)
-                      ? pizzaOn
-                      : pizzaOff
-                  }
-                  alt=""
-                  onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType4)}
-                />
-              </div>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </div>
     </>

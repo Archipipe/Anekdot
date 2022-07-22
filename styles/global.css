@@ -13,8 +13,6 @@ body {
   background-size: 200% auto;
 
   font-family: "Roboto", sans-serif;
-
-  /* animation: BG 2s linear infinite; */
 }
 
 @keyframes BG {

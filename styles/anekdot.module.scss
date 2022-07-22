@@ -18,17 +18,25 @@ $MColor: rgba(248, 201, 134, 0.856);
   transition: filter 0.3s ease;
 
   &:hover {
-    filter: drop-shadow(0px 0px 10px rgba(115, 86, 44, 0.856));
+    filter: drop-shadow(0px 0px 5px rgba(47, 47, 47, 0.856));
+  }
+
+  &:active {
+    transform: translate(0, 2px);
   }
 }
 
 .anekdot {
-  width: 100%;
+  width: 70%;
   height: 100vh;
 
-  & > div {
-    max-width: $MaxMBWidth;
-    width: $MBWidth;
+  margin: 0 2% 0 auto;
+
+  position: relative;
+
+  & > div:first-of-type {
+    width: 70%;
+    max-width: 900px;
     min-height: $MBHeight;
 
     background-color: $MColor;
@@ -36,10 +44,7 @@ $MColor: rgba(248, 201, 134, 0.856);
 
     position: absolute;
     top: 22%;
-    left: 50%;
-    transform: translate(-50%, 0);
-
-    padding-bottom: 50px;
+    left: 0%;
 
     @media screen and (max-width: 1500px) {
       top: ($ATypesMargin + 5%);
@@ -76,7 +81,7 @@ $MColor: rgba(248, 201, 134, 0.856);
 
       line-height: 125%;
 
-      padding: 0% 5%;
+      padding: 0% 5% 2%;
 
       br {
         content: "";
@@ -84,93 +89,90 @@ $MColor: rgba(248, 201, 134, 0.856);
         margin-bottom: 1.8%;
       }
     }
+  }
 
-    & > div + div {
-      max-height: $MaxMBHeight;
-      width: $ATypesMargin + 6%;
-      height: 100%;
+  & > div + div {
+    width: 50%;
+    max-width: 300px;
 
-      background-color: $MColor;
-      border-radius: 20px;
+    background-color: $MColor;
+    border-radius: 20px;
 
-      position: absolute;
-      top: 0;
-      right: -($ATypesMargin + 10%);
+    position: absolute;
+    top: 22%;
+    left: min(72%, 920px);
+
+    padding: 4% 0% 4% 4%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1500px) {
+      width: 70%;
+      max-width: 900px;
+
+      height: $ATypesMargin;
+      max-height: 120px;
 
       padding: 2% 0% 2% 2%;
+
+      top: min(calc(22% - min(20%, 120px)), calc(22% - 100px));
+      left: 0;
+    }
+
+    span {
+      width: 100%;
+      height: 10%;
+
       display: flex;
-      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
       flex-wrap: wrap;
 
-      @media screen and (max-width: 1500px) {
-        flex-direction: row;
+      position: relative;
+
+      label {
+        font-family: "Cormorant SC", serif;
+        font-weight: 600;
+        margin-left: 5%;
+
+        font-size: 1em;
+        padding-left: 8%;
       }
 
-      span {
-        width: 100%;
-        height: 10%;
+      input {
+        appearance: none;
+        padding: 0;
+        margin: 0;
+      }
 
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-wrap: wrap;
+      div {
+        width: 1.6em;
+        position: absolute;
+        left: 0;
+        top: 50%;
 
-        position: relative;
+        transform: translate(-25%, -50%);
 
-        label {
-          font-family: "Cormorant SC", serif;
-          font-weight: 600;
-          margin-left: 5%;
-
-          font-size: 1em;
-          padding-left: 8%;
-        }
-
-        input {
-          appearance: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        div {
-          width: 1.6em;
-          position: absolute;
-          left: 0;
+        @media screen and (max-width: 1500px) {
+          left: 20%;
           top: 50%;
 
-          transform: translate(-25%, -50%);
-
-          @media screen and (max-width: 1500px) {
-            left: 20%;
-            top: 50%;
-
-            transform: translate(0, -50%);
-          }
-        }
-
-        @media screen and (max-width: 1500px) {
-          padding-left: 10%;
-          width: 50%;
-          height: 50%;
-        }
-      }
-
-      span + span {
-        margin-top: 15%;
-        @media screen and (max-width: 1500px) {
-          margin-top: 0;
+          transform: translate(0, -50%);
         }
       }
 
       @media screen and (max-width: 1500px) {
-        max-width: $MaxMBWidth;
-        width: 100%;
+        padding-left: 10%;
+        width: 50%;
+        height: 50%;
+      }
+    }
 
-        height: $ATypesMargin;
-        max-height: 120px;
-
-        top: max(-25%, -150px);
-        right: 0;
+    span + span {
+      margin-top: 15%;
+      @media screen and (max-width: 1500px) {
+        margin-top: 0;
       }
     }
   }
