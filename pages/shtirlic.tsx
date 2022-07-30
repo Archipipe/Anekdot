@@ -16,7 +16,7 @@ let AMapObj = new Map([
   [AnekdotType.AnekdotType4, S4],
 ]);
 
-export default function Rjevsky() {
+export default function Shtirlic() {
   let ref = useRef<HTMLDivElement>(null);
   const [radioState, setRadioState] = useState<AnekdotType>(
     AnekdotType.AnekdotType1
@@ -27,13 +27,12 @@ export default function Rjevsky() {
     switch (action) {
       case ArrorType.ArrorLeft:
         curObj.unshift(curObj.pop()!);
-        ref.current!.innerHTML = curObj[0];
-        return;
+        break;
       case ArrorType.ArrorRight:
         curObj.push(curObj.shift()!);
-        ref.current!.innerHTML = curObj[0];
-        return;
+        break;
     }
+    ref.current!.innerHTML = curObj[0];
   }
   useEffect(() => {
     ref.current!.innerHTML = AMapObj.get(radioState)![0];
