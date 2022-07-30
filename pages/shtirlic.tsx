@@ -4,6 +4,8 @@ import { useEffect, useRef, useContext } from "react";
 import { AnekdotLayout } from "../components/AnekdotLayout";
 import { AnekdotContext, AnekdotType, ArrorType } from "../components/context";
 
+import Head from "next/head";
+
 import S1 from "../public/S1.json";
 import S2 from "../public/S2.json";
 import S3 from "../public/S3.json";
@@ -39,16 +41,21 @@ export default function Shtirlic() {
   }, [radioState]);
 
   return (
-    <AnekdotContext.Provider
-      value={{
-        Anekdot: radioState,
-        setAnekdot: setRadioState,
-        arrorAction,
-      }}
-    >
-      <AnekdotLayout>
-        <div ref={ref}>{AMapObj.get(radioState)![0]}</div>
-      </AnekdotLayout>
-    </AnekdotContext.Provider>
+    <>
+      <Head>
+        <title>Shtirlic</title>
+      </Head>
+      <AnekdotContext.Provider
+        value={{
+          Anekdot: radioState,
+          setAnekdot: setRadioState,
+          arrorAction,
+        }}
+      >
+        <AnekdotLayout>
+          <div ref={ref}>{AMapObj.get(radioState)![0]}</div>
+        </AnekdotLayout>
+      </AnekdotContext.Provider>
+    </>
   );
 }

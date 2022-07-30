@@ -4,6 +4,8 @@ import { useEffect, useRef, useContext } from "react";
 import { AnekdotLayout } from "../components/AnekdotLayout";
 import { AnekdotContext, AnekdotType } from "../components/context";
 
+import Head from "next/head";
+
 import R1 from "../public/R1.json";
 import R2 from "../public/R2.json";
 import R3 from "../public/R3.json";
@@ -39,16 +41,21 @@ export default function Rjevsky() {
   }, [radioState]);
 
   return (
-    <AnekdotContext.Provider
-      value={{
-        Anekdot: radioState,
-        setAnekdot: setRadioState,
-        arrorAction,
-      }}
-    >
-      <AnekdotLayout>
-        <div ref={ref}>{AMapObj.get(radioState)![0]}</div>
-      </AnekdotLayout>
-    </AnekdotContext.Provider>
+    <>
+      <Head>
+        <title>Rjevsky</title>
+      </Head>
+      <AnekdotContext.Provider
+        value={{
+          Anekdot: radioState,
+          setAnekdot: setRadioState,
+          arrorAction,
+        }}
+      >
+        <AnekdotLayout>
+          <div ref={ref}>{AMapObj.get(radioState)![0]}</div>
+        </AnekdotLayout>
+      </AnekdotContext.Provider>
+    </>
   );
 }

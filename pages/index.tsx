@@ -4,9 +4,14 @@ import rjevsky from "../public/rjevski.png";
 import shtirlic from "../public/shtirlic.png";
 import styles from "../styles/gs.module.scss";
 
+import Head from "next/head";
+
 export default function Index() {
   return (
     <>
+      <Head>
+        <title>Anekdot</title>
+      </Head>
       <div className={styles.GS}>
         <div className={styles["top-text"]}>
           <span>Выбери свои анекдоты</span>
