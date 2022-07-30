@@ -12,7 +12,7 @@ import pizzaOff from "../public/pizzaOff.png";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/anekdot.module.scss";
-import React, { useEffect, useState, useContext, useMemo } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { AnekdotContext, AnekdotType, ArrorType } from "./context";
 
 export const AnekdotLayout = ({ children }: Props) => {

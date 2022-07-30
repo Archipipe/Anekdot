@@ -22,13 +22,13 @@ export default function Shtirlic() {
     AnekdotType.AnekdotType1
   );
 
-  function arrorAction<ArrorType>(action: ArrorType): void {
+  function arrorAction(action: any): void {
     let curObj: string[] = AMapObj.get(radioState)!;
     switch (action) {
-      case ArrorType.ArrorLeft:
+      case "ArrorLeft":
         curObj.unshift(curObj.pop()!);
         break;
-      case ArrorType.ArrorRight:
+      case "ArrorRight":
         curObj.push(curObj.shift()!);
         break;
     }

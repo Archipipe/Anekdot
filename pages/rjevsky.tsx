@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useEffect, useRef, useContext } from "react";
 import { AnekdotLayout } from "../components/AnekdotLayout";
-import { AnekdotContext, AnekdotType, ArrorType } from "../components/context";
+import { AnekdotContext, AnekdotType } from "../components/context";
 
 import R1 from "../public/R1.json";
 import R2 from "../public/R2.json";
@@ -22,13 +22,13 @@ export default function Rjevsky() {
     AnekdotType.AnekdotType1
   );
 
-  function arrorAction<ArrorType>(action: ArrorType): void {
+  function arrorAction(action: any): void {
     let curObj: string[] = AMapObj.get(radioState)!;
     switch (action) {
-      case ArrorType.ArrorLeft:
+      case "ArrorLeft":
         curObj.unshift(curObj.pop()!);
         break;
-      case ArrorType.ArrorRight:
+      case "ArrorRight":
         curObj.push(curObj.shift()!);
         break;
     }
