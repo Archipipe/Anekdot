@@ -74,7 +74,12 @@ export const AnekdotLayout = ({ children }: Props) => {
               checked={isRadioSelected(AnekdotType.AnekdotType1)}
               readOnly={true}
             />
-            <label htmlFor="AnekdotType1">На трезвую голову</label>
+            <label
+              htmlFor="AnekdotType1"
+              onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType1)}
+            >
+              На трезвую голову
+            </label>
             <div>
               <Image
                 src={
@@ -95,7 +100,12 @@ export const AnekdotLayout = ({ children }: Props) => {
               checked={isRadioSelected(AnekdotType.AnekdotType2)}
               readOnly={true}
             />
-            <label htmlFor="AnekdotType2">Минус бутылочка</label>
+            <label
+              htmlFor="AnekdotType2"
+              onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType2)}
+            >
+              Минус бутылочка
+            </label>
             <div>
               <Image
                 src={
@@ -116,7 +126,12 @@ export const AnekdotLayout = ({ children }: Props) => {
               checked={isRadioSelected(AnekdotType.AnekdotType3)}
               readOnly={true}
             />
-            <label htmlFor="AnekdotType3">Состояние вертолётиков</label>
+            <label
+              htmlFor="AnekdotType3"
+              onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType3)}
+            >
+              Состояние вертолётиков
+            </label>
             <div>
               <Image
                 src={
@@ -137,7 +152,12 @@ export const AnekdotLayout = ({ children }: Props) => {
               checked={isRadioSelected(AnekdotType.AnekdotType4)}
               readOnly={true}
             />
-            <label htmlFor="AnekdotType4">Еба шатает нахуй</label>
+            <label
+              htmlFor="AnekdotType4"
+              onClick={(e) => handleSelectRadio(AnekdotType.AnekdotType4)}
+            >
+              Еба шатает нахуй
+            </label>
             <div>
               <Image
                 src={

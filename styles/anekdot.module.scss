@@ -60,6 +60,7 @@ $MColor: rgba(248, 201, 134, 0.856);
       justify-content: space-between;
       align-items: center;
       span {
+        cursor: pointer;
         height: 100%;
         width: 15%;
         opacity: 0.5;
@@ -138,6 +139,7 @@ $MColor: rgba(248, 201, 134, 0.856);
 
         font-size: 1em;
         padding-left: 8%;
+        cursor: pointer;
       }
 
       input {
@@ -147,6 +149,7 @@ $MColor: rgba(248, 201, 134, 0.856);
       }
 
       div {
+        cursor: pointer;
         width: 1.6em;
         position: absolute;
         left: 0;
